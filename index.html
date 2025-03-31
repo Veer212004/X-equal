@@ -5,164 +5,236 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FairHire - Home</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  
-  <link href="../components/navbar.css" rel="stylesheet">
   <style>
     :root {
-    /* Expanded Color Palette */
-    --primary: #2D3E50;
-    --secondary: #26A69A;
-    --accent: #FFC107;
-    --light: #edeff1;
-    --gray: #95A5A6;
-    --dark: #34495E;
-    --success: #2ECC71;
-    --danger: #E74C3C;
-    --warning: #F39C12;
-    --info: #3498DB;
+      /* Expanded Color Palette */
+      --primary: #2D3E50;
+      --secondary: #26A69A;
+      --accent: #FFC107;
+      --light: #edeff1;
+      --gray: #95A5A6;
+      --dark: #34495E;
+      --success: #2ECC71;
+      --danger: #E74C3C;
+      --warning: #F39C12;
+      --info: #3498DB;
 
-    /* Enhanced Typography Scale */
-    --font-xs: 0.75rem;
-    --font-sm: 0.875rem;
-    --font-base: 1rem;
-    --font-lg: 1.25rem;
-    --font-xl: 1.5rem;
-    --font-2xl: 2rem;
+      /* Enhanced Typography Scale */
+      --font-xs: 0.75rem;
+      --font-sm: 0.875rem;
+      --font-base: 1rem;
+      --font-lg: 1.25rem;
+      --font-xl: 1.5rem;
+      --font-2xl: 2rem;
 
-    /* Enhanced Shadows and Transitions */
-    --shadow-subtle: 0 2px 4px rgba(0, 0, 0, 0.05);
-    --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-strong: 0 10px 20px rgba(0, 0, 0, 0.15);
-    
-    --transition-speed: 0.3s;
-    --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
-}
+      /* Enhanced Shadows and Transitions */
+      --shadow-subtle: 0 2px 4px rgba(0, 0, 0, 0.05);
+      --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-strong: 0 10px 20px rgba(0, 0, 0, 0.15);
+      
+      --transition-speed: 0.3s;
+      --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-body {
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background:linear-gradient(134deg, #c1c8d3 0%, #5f90e1 100%);min-height: 100vh;
-    color: var(--dark);
-    line-height: 1.6;
-    letter-spacing: -0.02em;
-}
+    body {
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(134deg, #c1c8d3 0%, #5f90e1 100%);
+      min-height: 100vh;
+      color: var(--dark);
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+      margin: 30px;
+      overflow-x: hidden;
+    }
 
-/* Enhanced Sidebar */
-.sidebar {
-    background-color: var(--primary);
-    color: var(--light);
-    padding: 1.5rem;
-    box-shadow: var(--shadow-strong);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    transition: width var(--transition-speed) var(--transition-timing);
-}
+    /* Enhanced Sidebar */
+    .sidebar {
+      background-color: var(--primary);
+      color: var(--light);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-strong);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      transition: width var(--transition-speed) var(--transition-timing), transform 0.5s ease;
+    }
 
-.sidebar-link {
-    color: var(--light);
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    transition: all var(--transition-speed) var(--transition-timing);
-}
+    .sidebar-link {
+      color: var(--light);
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: all var(--transition-speed) var(--transition-timing);
+    }
 
-.sidebar-link:hover {
-    background-color: var(--accent);
-    color: var(--dark);
-    transform: translateX(5px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+    .sidebar-link:hover {
+      background-color: var(--accent);
+      color: var(--dark);
+      transform: translateX(5px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-/* Enhanced Page Header */
-.page-header {
-    background:linear-gradient(134deg, #c1c8d3 0%, #0e3575 100%);
-    color: var(--light);
-    padding: 1.5rem;
-    border-radius: 0.75rem;
-    box-shadow: var(--shadow-medium);
-}
+    /* Enhanced Page Header */
+    .page-header {
+      background: linear-gradient(134deg, #c1c8d3 0%, #0e3575 100%);
+      color: var(--light);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: var(--shadow-medium);
+    }
 
-/* Enhanced Card Styles */
-.card {
-    background-color: var(--light);
-    border-radius: 0.75rem;
-    box-shadow: var(--shadow-subtle);
-    transition: all var(--transition-speed) var(--transition-timing);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
+    /* Enhanced Card Styles */
+    .card {
+      background-color: var(--light);
+      border-radius: 0.75rem;
+      box-shadow: var(--shadow-subtle);
+      transition: all var(--transition-speed) var(--transition-timing);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-strong);
-    border-color: var(--secondary);
-}
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-strong);
+      border-color: var(--secondary);
+    }
 
-/* Progress Bar Enhancements */
-.progress-bar {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 1rem;
-    overflow: hidden;
-}
+    /* Progress Bar Enhancements */
+    .progress-bar {
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 1rem;
+      overflow: hidden;
+    }
 
-.progress-bar-fill {
-    background-color: var(--success);
-    transition: width var(--transition-speed) var(--transition-timing);
-}
+    .progress-bar-fill {
+      background-color: var(--success);
+      transition: width var(--transition-speed) var(--transition-timing);
+    }
 
-/* Animation Keyframes */
-@keyframes fadeIn {
-    from { 
+    /* Animation Keyframes */
+    @keyframes fadeIn {
+      from { 
         opacity: 0; 
         transform: translateY(20px); 
-    }
-    to { 
+      }
+      to { 
         opacity: 1; 
         transform: translateY(0); 
+      }
     }
-}
 
-.fade-in {
-    animation: fadeIn 0.6s ease-out;
-}
+    @keyframes slideInRight {
+      from {
+        transform: translateX(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .sidebar {
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes progressAnimation {
+      0% { width: 0%; }
+      100% { width: 75%; }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .slide-in-right {
+      animation: slideInRight 0.6s ease-out forwards;
+    }
+
+    .slide-in-left {
+      animation: slideInLeft 0.6s ease-out forwards;
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    .animate-progress {
+      animation: progressAnimation 1.5s ease-out forwards;
+    }
+
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .stagger-4 { animation-delay: 0.4s; }
+
+    /* Section visibility */
+    .section {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .section.active {
+      display: block;
+      opacity: 1;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .sidebar {
         width: 0;
         overflow: hidden;
         padding: 0;
-    }
+      }
 
-    .main-content {
+      .main-content {
         margin-left: 0;
         width: 100%;
+      }
     }
-}
 
-/* Accessibility and Focus States */
-*:focus {
-    outline: 2px solid var(--secondary);
-    outline-offset: 2px;
-}
+    /* Accessibility and Focus States */
+    *:focus {
+      outline: 2px solid var(--secondary);
+      outline-offset: 2px;
+    }
 
-/* Micro-interactions */
-button, .interactive {
-    transition: all var(--transition-speed) var(--transition-timing);
-}
+    /* Micro-interactions */
+    button, .interactive {
+      transition: all var(--transition-speed) var(--transition-timing);
+    }
 
-button:hover, .interactive:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-}
+    button:hover, .interactive:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
 
-/* Dark Mode Compatibility */
-@media (prefers-color-scheme: dark) {
-    body {
+    /* Dark Mode Compatibility */
+    @media (prefers-color-scheme: dark) {
+      body {
         background: linear-gradient(135deg, var(--dark) 0%, #1a2633 100%);
         color: var(--light);
+      }
     }
-}
-
 
     .feature-card {
       transition: all 0.3s ease;
@@ -231,88 +303,536 @@ button:hover, .interactive:hover {
       }
     }
 
+    /* Navbar Styles */
+    .navbar {
+      background-color: var(--primary);
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 0.75rem;
+      animation: fadeIn 0.6s ease-out;
+    }
 
-    .feature-card {
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        }
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-     
-        body {
-  margin: 30px; /* Set your desired margin */
-}
+    .navbar .logo {
+      color: var(--light);
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
 
+    .navbar .nav-links a {
+      color: var(--light);
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
 
-/* Navbar Styles */
-.navbar {
-    background-color: var(--primary);
-    padding: 1rem 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+    .navbar .nav-links a:hover {
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
 
-.navbar .logo {
-    color: var(--light);
-    font-size: 1.5rem;
-    font-weight: bold;
-}
+    .navbar .nav-links .bg-secondary {
+      background-color: var(--secondary);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
 
-.navbar .nav-links a {
-    color: var(--light);
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
+    .navbar .nav-links .bg-secondary:hover {
+      background-color: var(--accent);
+      transform: translateY(-2px);
+    }
 
-.navbar .nav-links a:hover {
-    color: var(--accent);
-}
+    /* Loading animation */
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      border-top-color: var(--secondary);
+      animation: spin 1s ease-in-out infinite;
+    }
 
-.navbar .nav-links .bg-secondary {
-    background-color: var(--secondary);
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    transition: background-color 0.3s ease;
-}
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Fix for dashboard and resume sections */
+    .sidebar {
+      height: 80vh;
+      top: 115px;
+      left: 0;
+      z-index: 10;
+      width: 30rem;
+      padding-top: 6rem;
+    }
+    
+    .ml-64 {
+      margin-left: 4rem;
+    }
+    
+    /* Fix for resume section alignment */
+    .resume-preview-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    
+    /* Fix for mobile responsiveness */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      
+      .ml-64 {
+        margin-left: 0;
+      }
+      
+      body {
+        margin: 15px;
+      }
+      
+      .navbar {
+        padding: 0.75rem 1rem;
+      }
+      
+      .navbar .nav-links {
+        display: none;
+      }
+      
+      .navbar .logo {
+        margin: 0 auto;
+      }
+    }
 
-.navbar .nav-links .bg-secondary:hover {
-    background-color: var(--accent);
-}
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      overflow: auto;
+      justify-content: center;
+      align-items: center;
+    }
 
-   
-   
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background-color: white;
+      border-radius: 0.75rem;
+      box-shadow: var(--shadow-strong);
+      width: 90%;
+      max-width: 500px;
+      animation: fadeIn 0.3s ease-out;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--gray);
+      transition: color 0.2s ease;
+    }
+
+    .close-modal:hover {
+      color: var(--danger);
+    }
+
+    /* Form styles */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-input:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 2px rgba(38, 166, 154, 0.2);
+    }
+
+    .form-input.error {
+      border-color: var(--danger);
+    }
+
+    .error-message {
+      color: var(--danger);
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+
+    /* Accessibility panel */
+    .accessibility-panel {
+      position: fixed;
+      right: -300px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 300px;
+      background-color: white;
+      border-radius: 0.75rem 0 0 0.75rem;
+      box-shadow: var(--shadow-strong);
+      padding: 1.5rem;
+      transition: right 0.3s ease;
+      z-index: 100;
+    }
+
+    .accessibility-panel.active {
+      right: 0;
+    }
+
+    .accessibility-toggle {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--secondary);
+      color: white;
+      padding: 0.75rem;
+      border-radius: 0.75rem 0 0 0.75rem;
+      cursor: pointer;
+      z-index: 101;
+      box-shadow: var(--shadow-medium);
+    }
+
+    /* High contrast mode */
+    body.high-contrast {
+      background: #000;
+      color: #fff;
+    }
+
+    body.high-contrast .navbar,
+    body.high-contrast .sidebar {
+      background-color: #000;
+      color: #fff;
+    }
+
+    body.high-contrast .card,
+    body.high-contrast .feature-card,
+    body.high-contrast .modal-content {
+      background-color: #000;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+
+    body.high-contrast a,
+    body.high-contrast button {
+      color: #ffff00;
+    }
+
+    /* Large text mode */
+    body.large-text {
+      font-size: 1.2rem;
+    }
+
+    body.large-text h1 {
+      font-size: 2.5rem;
+    }
+
+    body.large-text h2 {
+      font-size: 2rem;
+    }
+
+    body.large-text h3 {
+      font-size: 1.75rem;
+    }
+
+    /* User dropdown menu */
+    .user-dropdown {
+      position: relative;
+    }
+
+    .user-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: white;
+      border-radius: 0.5rem;
+      box-shadow: var(--shadow-medium);
+      width: 200px;
+      z-index: 100;
+    }
+
+    .user-menu.active {
+      display: block;
+      animation: fadeIn 0.2s ease-out;
+    }
+
+    .user-menu-item {
+      padding: 0.75rem 1rem;
+      display: block;
+      color: var(--dark);
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+
+    .user-menu-item:hover {
+      background-color: #f5f5f5;
+    }
+
+    .user-menu-item.danger {
+      color: var(--danger);
+    }
+
+    .user-menu-divider {
+      height: 1px;
+      background-color: #eee;
+      margin: 0.5rem 0;
+    }
+
+    /* Toast notifications */
+    .toast-container {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+    }
+
+    .toast {
+      background-color: white;
+      border-radius: 0.5rem;
+      box-shadow: var(--shadow-medium);
+      padding: 1rem;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      animation: slideInRight 0.3s ease-out;
+      max-width: 300px;
+    }
+
+    .toast.success {
+      border-left: 4px solid var(--success);
+    }
+
+    .toast.error {
+      border-left: 4px solid var(--danger);
+    }
+
+    .toast.info {
+      border-left: 4px solid var(--info);
+    }
+
+    .toast-icon {
+      margin-right: 0.75rem;
+      font-size: 1.25rem;
+    }
+
+    .toast-content {
+      flex: 1;
+    }
+
+    .toast-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .toast-message {
+      font-size: 0.875rem;
+      color: var(--gray);
+    }
+
+    .toast-close {
+      cursor: pointer;
+      color: var(--gray);
+      font-size: 1.25rem;
+      margin-left: 0.5rem;
+    }
   </style>
 </head>
 <body class="min-h-screen">
-    <div class="navbar flex justify-between items-center mb-12">
-        <div class="logo texlt-2xl font-bold text-primary">FairHire</div>
-        <div class="nav-links space-x-6">
-            <a href="home.html" class="text-dark hover:text-secondary">Home</a>
-            <a href="#dashboard" class="text-dark hover:text-secondary">Dashboard</a>
-            <a href="#resume" class="text-dark hover:text-secondary">Upload Resume</a>
-            <a href="#recruit" class="text-dark hover:text-secondary">Recruiter</a>
-            <a href="#sinup-form" class="bg-secondary text-white px-4 py-2 rounded-full hover:bg-opacity-90">Sign In</a>
-        </div>
+  <!-- Accessibility Panel -->
+  <div class="accessibility-toggle" aria-label="Open accessibility options" role="button" tabindex="0">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="M12 8v4"></path>
+      <path d="M12 16h.01"></path>
+    </svg>
+  </div>
+  
+  <div class="accessibility-panel">
+    <h3 class="text-lg font-bold mb-4">Accessibility Options</h3>
+    <div class="space-y-4">
+      <div>
+        <label class="flex items-center cursor-pointer">
+          <input type="checkbox" id="high-contrast-toggle" class="sr-only">
+          <div class="relative w-10 h-6 bg-gray-200 rounded-full">
+            <div class="dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition"></div>
+          </div>
+          <span class="ml-3 text-sm font-medium">High Contrast</span>
+        </label>
+      </div>
+      
+      <div>
+        <label class="flex items-center cursor-pointer">
+          <input type="checkbox" id="large-text-toggle" class="sr-only">
+          <div class="relative w-10 h-6 bg-gray-200 rounded-full">
+            <div class="dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition"></div>
+          </div>
+          <span class="ml-3 text-sm font-medium">Large Text</span>
+        </label>
+      </div>
+      
+      <div>
+        <label class="block text-sm font-medium mb-2">Text Spacing</label>
+        <input type="range" min="1" max="2" step="0.1" value="1" id="text-spacing-slider" class="w-full">
+      </div>
+      
+      <div>
+        <button id="screen-reader-button" class="w-full bg-secondary text-white py-2 px-4 rounded-md hover:bg-opacity-90 transition-all">
+          Screen Reader Instructions
+        </button>
+      </div>
     </div>
-    
-    <div class="hero flex gap-8 items-center mb-16">
-      <div class="hero-text flex-1">
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Sign Up Modal -->
+  <div class="modal" id="signup-modal">
+    <div class="modal-content p-6">
+      <span class="close-modal" id="close-signup">&times;</span>
+      <h2 class="text-2xl font-bold mb-6">Create Your Account</h2>
+      
+      <form id="signup-form" class="space-y-4">
+        <div class="form-group">
+          <label for="signup-name" class="form-label">Full Name</label>
+          <input type="text" id="signup-name" class="form-input" placeholder="Enter your full name" required>
+          <div class="error-message" id="name-error"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="signup-email" class="form-label">Email Address</label>
+          <input type="email" id="signup-email" class="form-input" placeholder="Enter your email" required>
+          <div class="error-message" id="email-error"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="signup-password" class="form-label">Password</label>
+          <input type="password" id="signup-password" class="form-input" placeholder="Create a password" required>
+          <div class="error-message" id="password-error"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="signup-confirm-password" class="form-label">Confirm Password</label>
+          <input type="password" id="signup-confirm-password" class="form-input" placeholder="Confirm your password" required>
+          <div class="error-message" id="confirm-password-error"></div>
+        </div>
+        
+        <div class="form-group">
+          <label class="flex items-center">
+            <input type="checkbox" id="signup-terms" class="mr-2" required>
+            <span class="text-sm">I agree to the <a href="#" class="text-secondary hover:underline">Terms of Service</a> and <a href="#" class="text-secondary hover:underline">Privacy Policy</a></span>
+          </label>
+          <div class="error-message" id="terms-error"></div>
+        </div>
+        
+        <div class="form-group">
+          <button type="submit" class="w-full bg-secondary text-white py-3 rounded-md hover:bg-opacity-90 transition-all">
+            Create Account
+          </button>
+        </div>
+        
+        <div class="text-center text-sm">
+          Already have an account? <a href="#" id="login-link" class="text-secondary hover:underline">Log In</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal" id="login-modal">
+    <div class="modal-content p-6">
+      <span class="close-modal" id="close-login">&times;</span>
+      <h2 class="text-2xl font-bold mb-6">Welcome Back</h2>
+      
+      <form id="login-form" class="space-y-4">
+        <div class="form-group">
+          <label for="login-email" class="form-label">Email Address</label>
+          <input type="email" id="login-email" class="form-input" placeholder="Enter your email" required>
+          <div class="error-message" id="login-email-error"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="login-password" class="form-label">Password</label>
+          <input type="password" id="login-password" class="form-input" placeholder="Enter your password" required>
+          <div class="error-message" id="login-password-error"></div>
+        </div>
+        
+        <div class="flex justify-between items-center">
+          <label class="flex items-center">
+            <input type="checkbox" id="remember-me" class="mr-2">
+            <span class="text-sm">Remember me</span>
+          </label>
+          <a href="#" class="text-sm text-secondary hover:underline">Forgot password?</a>
+        </div>
+        
+        <div class="form-group">
+          <button type="submit" class="w-full bg-secondary text-white py-3 rounded-md hover:bg-opacity-90 transition-all">
+            Log In
+          </button>
+        </div>
+        
+        <div class="text-center text-sm">
+          Don't have an account? <a href="#" id="signup-link" class="text-secondary hover:underline">Sign Up</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="navbar flex justify-between items-center mb-12">
+    <div class="logo text-2xl font-bold text-white">FairHire</div>
+    <div class="nav-links space-x-6">
+      <a href="#home" class="text-white hover:text-secondary nav-link active" data-section="home">Home</a>
+      <a href="#dashboard" class="text-white hover:text-secondary nav-link" data-section="dashboard">Dashboard</a>
+      <a href="#resume" class="text-white hover:text-secondary nav-link" data-section="resume">Upload Resume</a>
+      <a href="#recruit" class="text-white hover:text-secondary nav-link" data-section="recruit">Recruiter</a>
+      <a href="#" class="bg-secondary text-white px-4 py-2 rounded-full hover:bg-opacity-90" id="sign-in-button">Sign In</a>
+    </div>
+  </div>
+  
+  <!-- Home Section -->
+  <div id="home" class="section active">
+    <div class="hero flex flex-col md:flex-row gap-8 items-center mb-16">
+      <div class="hero-text flex-1 fade-in">
         <h1 class="text-4xl font-bold mb-4 text-primary">Bias-Free Hiring Starts Here</h1>
         <p class="text-xl mb-6 text-gray-700">Let skills speak louder than identity.</p>
         <div class="flex gap-4">
-          <a href="pages/upload-resume.html" class="bg-secondary text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition-all">Try Now</a>
+          <a href="#" class="bg-secondary text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition-all pulse" id="get-started-button">Get Started</a>
           <a href="#how-it-works" class="border-2 border-secondary text-secondary px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-all">How It Works</a>
         </div>
       </div>
-      <div class="hero-image flex-1 bg-white rounded-lg h-96 flex items-center justify-center shadow-xl">
-        <img src="4155971.jpg" alt="Resume Illustration" class="w-full h-full object-cover object-center rounded-lg">
+      <div class="hero-image flex-1 bg-white rounded-lg h-96 flex items-center justify-center shadow-xl slide-in-right">
+        <img src="https://img.freepik.com/free-vector/recruitment-concept-illustration_114360-6766.jpg" alt="Resume Illustration" class="w-full h-full object-cover object-center rounded-lg">
       </div>
     </div>
 
     <div class="features grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-      <div class="feature-card feature-card-blue bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-3">
+      <div class="feature-card feature-card-blue bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-3 fade-in stagger-1">
         <div class="flex items-center justify-center mb-4">
           <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -323,22 +843,22 @@ button:hover, .interactive:hover {
         <h3 class="text-xl font-bold mb-2 text-center text-blue-800">Resume Anonymizer</h3>
         <p class="text-blue-600 text-center">Automatically remove personal identifiers from resumes to ensure unbiased evaluation.</p>
       </div>
-      <div class="feature-card feature-card-yellow bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-3">
+      <div class="feature-card feature-card-yellow bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-3 fade-in stagger-2">
         <div class="flex items-center justify-center mb-4">
           <div class="bg-yellow-100 text-yellow-600 w-16 h-16 rounded-full flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
         </div>
         <h3 class="text-xl font-bold mb-2 text-center text-yellow-800">AI Skill Matching</h3>
         <p class="text-yellow-600 text-center">Advanced algorithms match candidates based on skills and experience, not demographics.</p>
       </div>
-      <div class="feature-card feature-card-green bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-3">
+      <div class="feature-card feature-card-green bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-3 fade-in stagger-3">
         <div class="flex items-center justify-center mb-4">
           <div class="bg-green-100 text-green-600 w-16 h-16 rounded-full flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
           </div>
         </div>
@@ -347,693 +867,1066 @@ button:hover, .interactive:hover {
       </div>
     </div>
 
-    <div id="how-it-works" class="how-it-works how-it-works-container bg-white rounded-lg shadow-lg p-8 mb-16">
+    <div id="how-it-works" class="how-it-works how-it-works-container bg-white rounded-lg shadow-lg p-8 mb-16 fade-in">
       <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">How It Works</h2>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-        <div class="step-card p-6 text-center relative">
+        <div class="step-card p-6 text-center relative fade-in stagger-1">
           <div class="step-number w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">1</div>
           <h3 class="font-bold mb-2 text-xl text-gray-800">Upload Resume</h3>
           <p class="text-black">Submit your resume through our secure platform</p>
           <div class="arrow-icon">→</div>
         </div>
-        <div class="step-card p-6 text-center relative">
+        <div class="step-card p-6 text-center relative fade-in stagger-2">
           <div class="step-number w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">2</div>
           <h3 class="font-bold mb-2 text-xl text-gray-800">AI Processing</h3>
           <p class="text-black">Our AI removes identifying information</p>
           <div class="arrow-icon">→</div>
         </div>
-        <div class="step-card p-6 text-center relative">
+        <div class="step-card p-6 text-center relative fade-in stagger-3">
           <div class="step-number w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">3</div>
           <h3 class="font-bold mb-2 text-xl text-gray-800">Skill Matching</h3>
-          <p class="text-gray">Get matched with relevant job opportunities</p>
+          <p class="text-black">Get matched with relevant job opportunities</p>
           <div class="arrow-icon">→</div>
         </div>
-        <div class="step-card p-6 text-center relative">
+        <div class="step-card p-6 text-center relative fade-in stagger-4">
           <div class="step-number w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">4</div>
           <h3 class="font-bold mb-2 text-xl text-gray-800">Fair Interview</h3>
-          <p class="text-gray">Participate in bias-free interviews</p>
+          <p class="text-black">Participate in bias-free interviews</p>
         </div>
       </div>
     </div>
 
-    <div class="cta-section bg-secondary text-black rounded-lg p-12 text-center mb-16">
+    <div class="cta-section bg-secondary text-white rounded-lg p-12 text-center mb-16 fade-in">
       <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Hiring Process?</h2>
       <p class="text-xl mb-8">Join hundreds of companies making their recruitment bias-free.</p>
-      <a href="pages/signup.html" class="bg-white text-secondary px-8 py-4 rounded-full font-bold hover:bg-opacity-90 transition-all">Get Started Now</a>
+      <a href="#" class="bg-white text-secondary px-8 py-4 rounded-full font-bold hover:bg-opacity-90 transition-all pulse" id="cta-button">Get Started Now</a>
     </div>
+  </div>
 
+  <!-- Dashboard Section -->
+  <div id="dashboard" class="section">
+    <div class="flex flex-col md:flex-row">
+      <!-- Sidebar -->
+      <div class="sidebar slide-in-left">
+        <div class="p-6">
+          <div class="text-2xl font-bold mb-8">Menu</div>
+          <nav class="space-y-2">
+            <a href="#" class="block py-2.5 px-4 rounded transition duration-200 bg-secondary text-white sidebar-link">
+              Dashboard
+            </a>
+            <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-secondary/20 sidebar-link">
+              My Profile
+            </a>
+            <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-secondary/20 sidebar-link">
+              Applications
+            </a>
+            <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-secondary/20 sidebar-link">
+              Job Matches
+            </a>
+            <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-secondary/20 sidebar-link">
+              Settings
+            </a>
+          </nav>
+        </div>
+      </div>
 
-
-
-
-
-   
-    <div id="dashboard">
-        <div id="navbar-container">
-        <div class="flex">
-          <!-- Sidebar -->
-          <div class="w-64 text-white h-screen fixed shadow-lg bg-secondary">
-            <div class="p-6">
-              <div class="text-2xl font-bold mb-8">Menu</div>
-              <nav class="space-y-2">
-                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 bg-secondary text-white">
-                  Dashboard
-                </a>
-                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-secondary/20">
-                  My Profile
-                </a>
-                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-secondary/20">
-                  Applications
-                </a>
-                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-secondary/20">
-                  Job Matches
-                </a>
-                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-secondary/20">
-                  Settings
-                </a> </nav>
+      <!-- Main Content -->
+      <div class="ml-64 p-8 w-full">
+        <div class="flex justify-between items-center mb-8 fade-in">
+          <h1 class="text-2xl font-bold text-primary">Welcome back, John!</h1>
+          <div class="flex items-center space-x-4">
+            <button class="bg-white p-2 rounded-full shadow">
+              🔔
+            </button>
+            <div class="user-dropdown">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="w-10 h-10 rounded-full cursor-pointer" id="user-menu-button">
+              <div class="user-menu" id="user-menu">
+                <a href="#" class="user-menu-item">My Profile</a>
+                <a href="#" class="user-menu-item">Account Settings</a>
+                <a href="#" class="user-menu-item">Notifications</a>
+                <div class="user-menu-divider"></div>
+                <a href="#" class="user-menu-item">Help Center</a>
+                <a href="#" class="user-menu-item danger">Sign Out</a>
+              </div>
             </div>
           </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+          <div class="feature-card bg-blue-40 border border-blue-200 p-6 rounded-lg shadow-lg hover:shadow-xl fade-in stagger-1">
+            <div class="text-black-900">Applications</div>
+            <div class="text-3xl font-bold text-primary">12</div>
+            <div class="text-yellow-300 text-sm">↑ 3 this week</div>
+          </div>
+          <div class="feature-card bg-yellow-40 border border-yellow-200 p-6 rounded-lg shadow-lg hover:shadow-xl fade-in stagger-2">
+            <div class="text-black-900">Interviews</div>
+            <div class="text-3xl font-bold text-primary">4</div>
+            <div class="text-green-400 text-sm">2 upcoming</div>
+          </div>
+          <div class="feature-card bg-green-40 border border-green-200 p-6 rounded-lg shadow-lg hover:shadow-xl fade-in stagger-3">
+            <div class="text-black-900">Profile Views</div>
+            <div class="text-3xl font-bold text-primary">156</div>
+            <div class="text-yellow-300 text-sm">↑ 12% this month</div>
+          </div>
+          <div class="feature-card bg-secondary/10 border border-secondary/30 p-6 rounded-lg shadow-lg hover:shadow-xl fade-in stagger-4">
+            <div class="text-secondary">Match Score</div>
+            <div class="text-3xl font-bold text-primary">85%</div>
+            <div class="text-green-400 text-sm">Top performer</div>
+          </div>
+        </div>
+
+        <!-- Recent Applications -->
+        <div class="bg-blue-50 rounded-lg shadow-lg p-6 mb-8 fade-in">
+          <h2 class="text-xl font-bold mb-4 text-primary">Recent Applications</h2>
+          <div class="space-y-4">
+            <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg transition-all duration-300">
+              <div>
+                <h3 class="font-bold text-primary">Senior Software Engineer</h3>
+                <p class="text-gray-500">TechCorp Inc.</p>
+              </div>
+              <div class="text-right">
+                <div class="text-secondary font-bold">In Review</div>
+                <div class="text-gray-500">Applied 2 days ago</div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg transition-all duration-300">
+              <div>
+                <h3 class="font-bold text-primary">Full Stack Developer</h3>
+                <p class="text-gray-500">Innovation Labs</p>
+              </div>
+              <div class="text-right">
+                <div class="text-green-600 font-bold">Interview Scheduled</div>
+                <div class="text-gray-500">Applied 5 days ago</div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg transition-all duration-300">
+              <div>
+                <h3 class="font-bold text-primary">Backend Engineer</h3>
+                <p class="text-gray-500">DataFlow Systems</p>
+              </div>
+              <div class="text-right">
+                <div class="text-gray-600 font-bold">Under Review</div>
+                <div class="text-gray-500">Applied 1 week ago</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recommended Jobs -->
+        <div class="bg-white rounded-lg shadow-lg p-6 fade-in">
+          <h2 class="text-xl font-bold mb-4 text-primary">Recommended Jobs</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="feature-card border border-blue-200 rounded-lg p-4 bg-blue-50 hover:shadow-xl fade-in stagger-1">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="font-bold text-primary">AI Engineer</h3>
+                  <p class="text-blue-600">FutureTech Solutions</p>
+                </div>
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">95% Match</span>
+              </div>
+              <p class="text-gray-600 mt-2">Looking for an AI engineer with strong Python and ML experience...</p>
+              <div class="mt-4 flex gap-2">
+                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">Python</span>
+                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">TensorFlow</span>
+                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">ML</span>
+              </div>
+            </div>
+            <div class="feature-card border border-green-200 rounded-lg p-4 bg-green-50 hover:shadow-xl fade-in stagger-2">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="font-bold text-primary">DevOps Engineer</h3>
+                  <p class="text-green-600">CloudScale Inc.</p>
+                </div>
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">88% Match</span>
+              </div>
+              <p class="text-gray-600 mt-2">Seeking DevOps engineer with container orchestration experience...</p>
+              <div class="mt-4 flex gap-2">
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Docker</span>
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Kubernetes</span>
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">AWS</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-        <!-- Main Content -->
-        <div class="ml-64 p-8 w-full">
-            <div class="flex justify-between items-center mb-8">
-                <h1 class="text-2xl font-bold text-primary">Welcome back, John!</h1>
-                <div class="flex items-center space-x-4">
-                    <button class="bg-white p-2 rounded-full shadow">
-                        🔔
-                    </button>
-                    <img src="../assets/avatar.jpg" alt="Profile" class="w-10 h-10 rounded-full">
-                </div>
-            </div>
-
-            <!-- Stats Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                <div class="feature-card bg-blue-40 border border-blue-200 p-6 rounded-lg shadow-lg hover:shadow-xl">
-                    <div class="text-black-900">Applications</div>
-                    <div class="text-3xl font-bold text-primary">12</div>
-                    <div class="text-yellow-300 text-sm">↑ 3 this week</div>
-                </div>
-                <div class="feature-card bg-yellow-40 border border-yellow-200 p-6 rounded-lg shadow-lg hover:shadow-xl">
-                    <div class="text-black-900">Interviews</div>
-                    <div class="text-3xl font-bold text-primary">4</div>
-                    <div class="text-green-400 text-sm">2 upcoming</div>
-                </div>
-                <div class="feature-card bg-green-40 border border-green-200 p-6 rounded-lg shadow-lg hover:shadow-xl">
-                    <div className="text-black-900">Profile Views</div>
-                    <div className="text-3xl font-bold text-primary">156</div>
-                    <div className="text-yellow-300 text-sm">↑ 12% this month</div>
-                </div>
-                <div class="feature-card bg-secondary/10 border border-secondary/30 p-6 rounded-lg shadow-lg hover:shadow-xl">
-                    <div class="text-secondary">Match Score</div>
-                    <div class="text-3xl font-bold text-primary">85%</div>
-                    <div class="text-green-400 text-sm">Top performer</div>
-                </div>
-            </div>
-
-            <!-- Recent Applications -->
-            <div class="bg-blue-50 rounded-lg shadow-lg p-6 mb-8">
-                <h2 class="text-xl font-bold mb-4 text-primary">Recent Applications</h2>
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg">
-                        <div>
-                            <h3 class="font-bold text-primary">Senior Software Engineer</h3>
-                            <p class="text-gray-500">TechCorp Inc.</p>
-                        </div>
-                        <div class="text-right">
-                            <div class="text-secondary font-bold">In Review</div>
-                            <div class="text-gray-500">Applied 2 days ago</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg">
-                        <div>
-                            <h3 class="font-bold text-primary">Full Stack Developer</h3>
-                            <p class="text-gray-500">Innovation Labs</p>
-                        </div>
-                        <div class="text-right">
-                            <div class="text-green-600 font-bold">Interview Scheduled</div>
-                            <div class="text-gray-500">Applied 5 days ago</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg">
-                        <div>
-                            <h3 class="font-bold text-primary">Backend Engineer</h3>
-                            <p class="text-gray-500">DataFlow Systems</p>
-                        </div>
-                        <div class="text-right">
-                            <div class="text-gray-600 font-bold">Under Review</div>
-                            <div class="text-gray-500">Applied 1 week ago</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Recommended Jobs -->
-            <div class="bg-white rounded-lg shadow-lg p-6">
-                <h2 class="text-xl font-bold mb-4 text-primary">Recommended Jobs</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="feature-card border border-blue-200 rounded-lg p-4 bg-blue-50 hover:shadow-xl">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="font-bold text-primary">AI Engineer</h3>
-                                <p class="text-blue-600">FutureTech Solutions</p>
-                            </div>
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">95% Match</span>
-                        </div>
-                        <p class="text-gray-600 mt-2">Looking for an AI engineer with strong Python and ML experience...</p>
-                        <div class="mt-4 flex gap-2">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">Python</span>
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">TensorFlow</span>
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">ML</span>
-                        </div>
-                    </div>
-                    <div class="feature-card border border-green-200 rounded-lg p-4 bg-green-50 hover:shadow-xl">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="font-bold text-primary">DevOps Engineer</h3>
-                                <p class="text-green-600">CloudScale Inc.</p>
-                            </div>
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">88% Match</span>
-                        </div>
-                        <p class="text-gray-600 mt-2">Seeking DevOps engineer with container orchestration experience...</p>
-                        <div class="mt-4 flex gap-2">
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Docker</span>
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Kubernetes</span>
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">AWS</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-</div>
+  </div>
 
+  <!-- Recruiter Section -->
+  <div id="recruit" class="section">
+    <div class="flex flex-col md:flex-row">
+      <!-- Sidebar -->
+      <div class="sidebar slide-in-left">
+        <div class="p-6">
+          <div class="text-2xl font-bold text-primary mb-8">Menu</div>
+          <nav class="space-y-2">
+            <a href="#dashboard" class="block py-2.5 px-4 rounded transition duration-200 bg-secondary text-white sidebar-link">
+              Dashboard
+            </a>
+            <a href="#job-postings" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-100 sidebar-link">
+              Job Postings
+            </a>
+            <a href="#candidates" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100 sidebar-link">
+              Candidates
+            </a>
+            <a href="#analytics" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100 sidebar-link">
+              Analytics
+            </a>
+            <a href="#settings" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100 sidebar-link">
+              Settings
+            </a>
+          </nav>
+        </div>
+      </div>
 
-
-
-<div id="recruit">
-<body class="min-h-screen">
-    <div id="navbar-container"></div>
-    <div class="flex">
-        <!-- Sidebar -->
-        <div class="w-64  h-screen fixed shadow-lg">
-            <div class="p-6">
-                <div class="text-2xl font-bold text-primary mb-8">Menu</div>
-                   <nav class="space-y-2">
-                    <a href="#dashboard" class="block py-2.5 px-4 rounded transition duration-200 bg-secondary text-white">
-                        Dashboard
-                    </a>
-                    <a href="#job-postings" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-100">
-                        Job Postings
-                    </a>
-                    <a href="#candidates" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100">
-                        Candidates
-                    </a>
-                    <a href="#analytics" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100">
-                        Analytics
-                    </a>
-                    <a href="#settings" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100">
-                        Settings
-                    </a>
-                </nav>
+      <!-- Main Content -->
+      <div class="ml-64 p-8 w-full">
+        <div class="flex justify-between items-center mb-8 fade-in">
+          <h1 class="text-2xl font-bold">Recruiter Dashboard</h1>
+          <div class="flex items-center space-x-4">
+            <button class="bg-white p-2 rounded-full shadow">
+              🔔
+            </button>
+            <div class="user-dropdown">
+              <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Profile" class="w-10 h-10 rounded-full cursor-pointer" id="recruiter-menu-button">
+              <div class="user-menu" id="recruiter-menu">
+                <a href="#" class="user-menu-item">My Profile</a>
+                <a href="#" class="user-menu-item">Account Settings</a>
+                <a href="#" class="user-menu-item">Notifications</a>
+                <div class="user-menu-divider"></div>
+                <a href="#" class="user-menu-item">Help Center</a>
+                <a href="#" class="user-menu-item danger">Sign Out</a>
+              </div>
             </div>
+          </div>
         </div>
 
-        <!-- Main Content -->
-        <div class="ml-64 p-8 w-full">
-            <div class="flex justify-between items-center mb-8">
-                <h1 class="text-2xl font-bold">Recruiter Dashboard</h1>
-                <div class="flex items-center space-x-4">
-                    <button class="bg-white p-2 rounded-full shadow">
-                        🔔
-                    </button>
-                    <img src="../assets/recruiter-avatar.jpg" alt="Profile" class="w-10 h-10 rounded-full">
-                </div>
-            </div>
-
-            <!-- Stats Overview -->
-            <div id="dashboard" class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                <div class="feature-card bg-blue-40 border border-blue-200 p-6 rounded-lg shadow-lg hover:shadow-xl">
-                    <div class="text-gray-500">Active Jobs</div>
-                    <div class="text-3xl font-bold">24</div>
-                    <div class="text-yellow-300 text-sm">↑ 3 new this week</div>
-                </div>
-                <div class="feature-card bg-yellow-40 border border-yellow-200 p-6 rounded-lg shadow-lg hover:shadow-xl">
-                    <div class="text-gray-500">Total Applications</div>
-                    <div class="text-3xl font-bold">847</div>
-                    <div class="text-green-400 text-sm">↑ 12% this month</div>
-                </div>
-                <div class="feature-card bg-green-40 border border-green-200 p-6 rounded-lg shadow-lg hover:shadow-xl">
-                    <div class="text-gray-500">Interviews Scheduled</div>
-                    <div class="text-3xl font-bold">32</div>
-                    <div class="text-yellow-300 text-sm">This week</div>
-                </div>
-                <div class="feature-card bg-secondary/10 border border-secondary/30 p-6 rounded-lg shadow-lg hover:shadow-xl">
-                    <div class="text-gray-500">Time to Hire</div>
-                    <div class="text-3xl font-bold">18d</div>
-                    <div class="text-green-400 text-sm">↓ 2 days faster</div>
-                </div>
-            </div>
-
-            <!-- Recent Applications & Analytics -->
-            <div id="analytics" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <!-- Recent Applications -->
-                <div class="bg-yellow-50 rounded-lg shadow-lg p-8">
-                    <h2 class="text-xl font-bold mb-4">Recent Applications</h2>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg">
-                            <div>
-                                <h3 class="font-bold">Senior Frontend Developer</h3>
-                                <p class="text-gray-500">12 new applications</p>
-                            </div>
-                            <button class="text-secondary hover:underline">Review</button>
-                        </div>
-                        <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg">
-                            <div>
-                                <h3 class="font-bold">DevOps Engineer</h3>
-                                <p class="text-gray-500">8 new applications</p>
-                            </div>
-                            <button class="text-secondary hover:underline">Review</button>
-                        </div>
-                        <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg">
-                            <div>
-                                <h3 class="font-bold">Product Manager</h3>
-                                <p class="text-gray-500">15 new applications</p>
-                            </div>
-                            <button class="text-secondary hover:underline">Review</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Analytics Chart -->
-                <div class="bg-yellow-50 rounded-lg shadow-lg p-6">
-                    <h2 class="text-xl font-bold mb-4">Application Trends</h2>
-                    <canvas id="applicationsChart" height="200"></canvas>
-                </div>
-            </div>
-
-            <!-- Settings Section -->
-            <div id="settings" class="bg-yellow-50 rounded-lg shadow-lg p-6 mb-8">
-                <h2 class="text-xl font-bold mb-6">Settings</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Profile Settings -->
-                    <div class="space-y-6">
-                        <h3 class="font-bold text-lg">Profile Settings</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-gray-700 mb-2">Profile Picture</label>
-                                <div class="flex items-center space-x-4">
-                                    <img src="../assets/recruiter-avatar.jpg" alt="Profile" class="w-16 h-16 rounded-full">
-                                    <button class="text-secondary hover:underline">Change Photo</button>
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 mb-2">Name</label>
-                                <input type="text" value="John Doe" class="w-full p-2 border rounded-lg">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 mb-2">Email</label>
-                                <input type="email" value="john@fairhire.com" class="w-full p-2 border rounded-lg">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Notification Settings -->
-                    <div class="space-y-6">
-                        <h3 class="font-bold text-lg">Notification Preferences</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between">
-                                <span>Email Notifications</span>
-                                <label class="relative inline-flex items-center cursor-pointer">
-                                    <input type="checkbox" class="sr-only peer" checked>
-                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
-                                </label>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span>Desktop Notifications</span>
-                                <label class="relative inline-flex items-center cursor-pointer">
-                                    <input type="checkbox" class="sr-only peer" checked>
-                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
-                                </label>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span>Weekly Reports</span>
-                                <label class="relative inline-flex items-center cursor-pointer">
-                                    <input type="checkbox" class="sr-only peer">
-                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Save Settings Button -->
-                <div class="mt-8 flex justify-end">
-                    <button class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all">
-                        Save Changes
-                    </button>
-                </div>
-            </div>
+        <!-- Stats Overview -->
+        <div id="dashboard" class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+          <div class="feature-card bg-blue-40 border border-blue-200 p-6 rounded-lg shadow-lg hover:shadow-xl fade-in stagger-1">
+            <div class="text-gray-500">Active Jobs</div>
+            <div class="text-3xl font-bold">24</div>
+            <div class="text-yellow-300 text-sm">↑ 3 new this week</div>
+          </div>
+          <div class="feature-card bg-yellow-40 border border-yellow-200 p-6 rounded-lg shadow-lg hover:shadow-xl fade-in stagger-2">
+            <div class="text-gray-500">Total Applications</div>
+            <div class="text-3xl font-bold">847</div>
+            <div class="text-green-400 text-sm">↑ 12% this month</div>
+          </div>
+          <div class="feature-card bg-green-40 border border-green-200 p-6 rounded-lg shadow-lg hover:shadow-xl fade-in stagger-3">
+            <div class="text-gray-500">Interviews Scheduled</div>
+            <div class="text-3xl font-bold">32</div>
+            <div class="text-yellow-300 text-sm">This week</div>
+          </div>
+          <div class="feature-card bg-secondary/10 border border-secondary/30 p-6 rounded-lg shadow-lg hover:shadow-xl fade-in stagger-4">
+            <div class="text-gray-500">Time to Hire</div>
+            <div class="text-3xl font-bold">18d</div>
+            <div class="text-green-400 text-sm">↓ 2 days faster</div>
+          </div>
         </div>
+
+        <!-- Recent Applications & Analytics -->
+        <div id="analytics" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <!-- Recent Applications -->
+          <div class="bg-yellow-50 rounded-lg shadow-lg p-8 fade-in">
+            <h2 class="text-xl font-bold mb-4">Recent Applications</h2>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg transition-all duration-300">
+                <div>
+                  <h3 class="font-bold">Senior Frontend Developer</h3>
+                  <p class="text-gray-500">12 new applications</p>
+                </div>
+                <button class="text-secondary hover:underline">Review</button>
+              </div>
+              <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg transition-all duration-300">
+                <div>
+                  <h3 class="font-bold">DevOps Engineer</h3>
+                  <p class="text-gray-500">8 new applications</p>
+                </div>
+                <button class="text-secondary hover:underline">Review</button>
+              </div>
+              <div class="flex items-center justify-between p-4 hover:bg-gray-50 rounded-lg transition-all duration-300">
+                <div>
+                  <h3 class="font-bold">Product Manager</h3>
+                  <p class="text-gray-500">15 new applications</p>
+                </div>
+                <button class="text-secondary hover:underline">Review</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Analytics Chart -->
+          <div class="bg-yellow-50 rounded-lg shadow-lg p-6 fade-in">
+            <h2 class="text-xl font-bold mb-4">Application Trends</h2>
+            <canvas id="applicationsChart" height="200"></canvas>
+          </div>
+        </div>
+
+        <!-- Settings Section -->
+        <div id="settings" class="bg-yellow-50 rounded-lg shadow-lg p-6 mb-8 fade-in">
+          <h2 class="text-xl font-bold mb-6">Settings</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Profile Settings -->
+            <div class="space-y-6">
+              <h3 class="font-bold text-lg">Profile Settings</h3>
+              <div class="space-y-4">
+                <div>
+                  <label class="block text-gray-700 mb-2">Profile Picture</label>
+                  <div class="flex items-center space-x-4">
+                    <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Profile" class="w-16 h-16 rounded-full">
+                    <button class="text-secondary hover:underline">Change Photo</button>
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-gray-700 mb-2">Name</label>
+                  <input type="text" value="Sarah Johnson" class="w-full p-2 border rounded-lg">
+                </div>
+                <div>
+                  <label class="block text-gray-700 mb-2">Email</label>
+                  <input type="email" value="sarah@fairhire.com" class="w-full p-2 border rounded-lg">
+                </div>
+              </div>
+            </div>
+
+            <!-- Notification Settings -->
+            <div class="space-y-6">
+              <h3 class="font-bold text-lg">Notification Preferences</h3>
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span>Email Notifications</span>
+                  <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" class="sr-only peer" checked>
+                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+                  </label>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span>Desktop Notifications</span>
+                  <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" class="sr-only peer" checked>
+                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+                  </label>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span>Weekly Reports</span>
+                  <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" class="sr-only peer">
+                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Save Settings Button -->
+          <div class="mt-8 flex justify-end">
+            <button class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all">
+              Save Changes
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Add this script before the closing body tag, after the Chart.js script -->
-    <script>
-        // Settings functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Profile picture change
-            const changePhotoBtn = document.querySelector('button.text-secondary');
-            const fileInput = document.createElement('input');
-            fileInput.type = 'file';
-            fileInput.accept = 'image/*';
-            fileInput.style.display = 'none';
-            document.body.appendChild(fileInput);
-    
-            changePhotoBtn.addEventListener('click', () => {
-                fileInput.click();
-            });
-    
-            fileInput.addEventListener('change', (e) => {
-                const file = e.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        const profilePics = document.querySelectorAll('img[alt="Profile"]');
-                        profilePics.forEach(pic => {
-                            pic.src = e.target.result;
-                        });
-                    }
-                    reader.readAsDataURL(file);
-                }
-            });
-    
-            // Save settings functionality
-            const saveButton = document.querySelector('#settings button.bg-secondary');
-            const nameInput = document.querySelector('input[type="text"]');
-            const emailInput = document.querySelector('input[type="email"]');
-            const notificationToggles = document.querySelectorAll('#settings input[type="checkbox"]');
-    
-            saveButton.addEventListener('click', () => {
-                // Validate email
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(emailInput.value)) {
-                    alert('Please enter a valid email address');
-                    return;
-                }
-    
-                // Save to localStorage (in real app, this would be an API call)
-                const settings = {
-                    name: nameInput.value,
-                    email: emailInput.value,
-                    notifications: {
-                        email: notificationToggles[0].checked,
-                        desktop: notificationToggles[1].checked,
-                        weekly: notificationToggles[2].checked
-                    }
-                };
-    
-                localStorage.setItem('recruiterSettings', JSON.stringify(settings));
-    
-                // Show success message
-                const successMsg = document.createElement('div');
-                successMsg.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg';
-                successMsg.textContent = 'Settings saved successfully!';
-                document.body.appendChild(successMsg);
-    
-                // Remove success message after 3 seconds
-                setTimeout(() => {
-                    successMsg.remove();
-                }, 3000);
-            });
-    
-            // Load saved settings
-            const savedSettings = localStorage.getItem('recruiterSettings');
-            if (savedSettings) {
-                const settings = JSON.parse(savedSettings);
-                nameInput.value = settings.name;
-                emailInput.value = settings.email;
-                notificationToggles[0].checked = settings.notifications.email;
-                notificationToggles[1].checked = settings.notifications.desktop;
-                notificationToggles[2].checked = settings.notifications.weekly;
-            }
+  <!-- Resume Upload Section -->
+  <div id="resume" class="section">
+    <div class="flex flex-col md:flex-row">
+      <!-- Sidebar -->
+      <div class="sidebar slide-in-left">
+        <div class="p-6">
+          <div class="text-2xl font-bold text-primary mb-8">Menu</div>
+          <nav class="space-y-2">
+            <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100 sidebar-link">
+              Dashboard
+            </a>
+            <a href="#" class="block py-2.5 px-4 rounded transition duration-200 bg-secondary text-white sidebar-link">
+              Upload Resume
+            </a>
+            <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100 sidebar-link">
+              Applications
+            </a>
+            <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100 sidebar-link">
+              Job Matches
+            </a>
+            <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100 sidebar-link">
+              Settings
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="ml-64 p-8 w-full">
+        <div class="flex justify-between items-center mb-8 fade-in">
+          <h1 class="text-2xl font-bold">Upload Your Resume</h1>
+          <div class="flex items-center space-x-4">
+            <button class="bg-white p-2 rounded-full shadow">
+              🔔
+            </button>
+            <div class="user-dropdown">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="w-10 h-10 rounded-full cursor-pointer" id="resume-menu-button">
+              <div class="user-menu" id="resume-menu">
+                <a href="#" class="user-menu-item">My Profile</a>
+                <a href="#" class="user-menu-item">Account Settings</a>
+                <a href="#" class="user-menu-item">Notifications</a>
+                <div class="user-menu-divider"></div>
+                <a href="#" class="user-menu-item">Help Center</a>
+                <a href="#" class="user-menu-item danger">Sign Out</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upload Section -->
+        <div class="bg-yellow-50 rounded-lg shadow-lg p-8 mb-8 fade-in">
+          <div class="upload-zone rounded-lg border-2 border-dashed border-secondary p-12 text-center cursor-pointer hover:bg-secondary/5 transition-all duration-300">
+            <input type="file" id="resume-upload" class="hidden" accept=".pdf,.doc,.docx">
+            <label for="resume-upload" class="cursor-pointer">
+              <div class="text-6xl mb-4 pulse">📄</div>
+              <h3 class="text-xl font-bold mb-2">Drag and drop your resume here</h3>
+              <p class="text-gray-500 mb-4">or click to browse files</p>
+              <p class="text-sm text-gray-400">Supported formats: PDF, DOC, DOCX (Max 5MB)</p>
+            </label>
+          </div>
+        </div>
+
+        <!-- Resume Preview -->
+        <div class="bg-yellow-50 rounded-lg shadow-lg p-8 fade-in">
+          <h2 class="text-xl font-bold mb-6">Resume Preview</h2>
+          
+          <!-- Progress Bar -->
+          <div class="mb-8">
+            <div class="flex justify-between mb-2">
+              <span class="text-sm font-semibold">Anonymization Progress</span>
+              <span class="text-sm text-secondary">75%</span>
+            </div>
+            <div class="bg-gray-200 rounded-full h-2">
+              <div class="bg-secondary rounded-full h-2 w-0 animate-progress"></div>
+            </div>
+          </div>
+
+          <!-- Preview Sections -->
+          <div class="resume-preview-container space-y-6">
+            <div class="border rounded-lg p-4 fade-in stagger-1">
+              <h3 class="font-bold mb-2">Personal Information</h3>
+              <div class="space-y-2">
+                <div class="flex items-center">
+                  <span class="w-24 text-gray-500">Name:</span>
+                  <span class="bg-gray-100 px-2 py-1 rounded">*****</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="w-24 text-gray-500">Email:</span>
+                  <span class="bg-gray-100 px-2 py-1 rounded">*****@*****.com</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="w-24 text-gray-500">Phone:</span>
+                  <span class="bg-gray-100 px-2 py-1 rounded">(***)***-****</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="border rounded-lg p-4 fade-in stagger-2">
+              <h3 class="font-bold mb-2">Skills</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-gray-100 px-3 py-1 rounded">JavaScript</span>
+                <span class="bg-gray-100 px-3 py-1 rounded">React</span>
+                <span class="bg-gray-100 px-3 py-1 rounded">Node.js</span>
+                <span class="bg-gray-100 px-3 py-1 rounded">Python</span>
+                <span class="bg-gray-100 px-3 py-1 rounded">SQL</span>
+              </div>
+            </div>
+
+            <div class="border rounded-lg p-4 fade-in stagger-3">
+              <h3 class="font-bold mb-2">Experience</h3>
+              <div class="space-y-4">
+                <div>
+                  <div class="font-semibold">Senior Software Engineer</div>
+                  <div class="text-gray-500">[Company Name Hidden] • 2020 - Present</div>
+                  <ul class="list-disc list-inside text-gray-600 mt-2">
+                    <li>Led development of microservices architecture</li>
+                    <li>Improved system performance by 40%</li>
+                    <li>Mentored junior developers</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex justify-end gap-4 mt-8">
+            <button class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all duration-300">
+              Edit
+            </button>
+            <button class="px-6 py-2 bg-secondary text-white rounded-lg hover:bg-opacity-90 transition-all duration-300 pulse">
+              Save & Continue
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 pt-8 text-white mt-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <h4 class="font-bold mb-4 text-black">About</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-white hover:text-secondary">Our Story</a></li>
+          <li><a href="#" class="text-white hover:text-secondary">Team</a></li>
+          <li><a href="#" class="text-white hover:text-secondary">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-4 text-black">Resources</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-white hover:text-secondary">Blog</a></li>
+          <li><a href="#" class="text-white hover:text-secondary">Guide</a></li>
+          <li><a href="#" class="text-white hover:text-secondary">FAQ</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="font-bold mb-4 text-black">Legal</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-white hover:text-secondary">Privacy</a></li>
+          <li><a href="#" class="text-white hover:text-secondary">Terms</a></li>
+          <li><a href="#" class="text-white hover:text-secondary">Security</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-4 text-black">Connect</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-white hover:text-secondary">Twitter</a></li>
+          <li><a href="#" class="text-white hover:text-secondary">LinkedIn</a></li>
+          <li><a href="#" class="text-white hover:text-secondary">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="text-center text-white pb-8">
+      © 2024 FairHire. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Navigation between sections
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.section');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      function showSection(sectionId) {
+        sections.forEach(section => {
+          section.classList.remove('active');
         });
-    </script>
-    <script>
-        // Initialize Chart
-        const ctx = document.getElementById('applicationsChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                datasets: [{
-                    label: 'Applications',
-                    data: [65, 78, 90, 85, 99, 112],
-                    borderColor: '#26A69A',
-                    tension: 0.4,
-                    fill: false
-                }]
+        
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+        });
+        
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+          targetSection.classList.add('active');
+          
+          const activeLink = document.querySelector(`.nav-link[data-section="${sectionId}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+          
+          // Reset animations
+          const animatedElements = targetSection.querySelectorAll('.fade-in, .slide-in-right, .slide-in-left');
+          animatedElements.forEach(el => {
+            el.style.animation = 'none';
+            el.offsetHeight; // Trigger reflow
+            el.style.animation = null;
+          });
+          
+          // Scroll to top
+          window.scrollTo(0, 0);
+        }
+      }
+      
+      // Add click event to navigation links
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const sectionId = this.getAttribute('data-section');
+          showSection(sectionId);
+        });
+      });
+      
+      // Make showSection available globally
+      window.showSection = showSection;
+      
+      // Initialize Chart
+      const ctx = document.getElementById('applicationsChart');
+      if (ctx) {
+        const chart = new Chart(ctx.getContext('2d'), {
+          type: 'line',
+          data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+              label: 'Applications',
+              data: [65, 78, 90, 85, 99, 112],
+              borderColor: '#26A69A',
+              tension: 0.4,
+              fill: false
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                display: false
+              }
             },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
+            scales: {
+              y: {
+                beginAtZero: true
+              }
             }
+          }
         });
-    </script>
+      }
+      
+      // Drag and drop functionality for resume upload
+      const dropZone = document.querySelector('.upload-zone');
+      const fileInput = document.querySelector('#resume-upload');
 
-
-
-
-<div id="resume">
-    <body class="min-h-screen">
-    <div id="navbar-container"></div>
-    <div class="flex">
-        <!-- Sidebar -->
-        <div class="w-64  h-screen fixed shadow-lg">
-            <div class="p-6">
-                <div class="text-2xl font-bold text-primary mb-8">Menu</div>
-                    <nav class="space-y-2">
-                    <a href="candidate-dashboard.html" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100">
-                        Dashboard
-                    </a>
-                    <a href="upload-resume.html" class="block py-2.5 px-4 rounded transition duration-200 bg-secondary text-white">
-                        Upload Resume
-                    </a>
-                    <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100">
-                        Applications
-                    </a>
-                    <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100">
-                        Job Matches
-                    </a>
-                    <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100">
-                        Settings
-                    </a>
-                </nav>
-            </div>
-        </div>
-
-        <!-- Main Content -->
-        <div class="ml-64 p-8 w-full">
-            <div class="flex justify-between items-center mb-8">
-                <h1 class="text-2xl font-bold">Upload Your Resume</h1>
-                <div class="flex items-center space-x-4">
-                    <button class="bg-white p-2 rounded-full shadow">
-                        🔔
-                    </button>
-                    <img src="../assets/avatar.jpg" alt="Profile" class="w-10 h-10 rounded-full">
-                </div>
-            </div>
-
-            <!-- Upload Section -->
-            <div class="bg-yellow-50 rounded-lg shadow-lg p-8 mb-8">
-                <div class="upload-zone rounded-lg p-12 text-center cursor-pointer">
-                    <input type="file" id="resume-upload" class="hidden" accept=".pdf,.doc,.docx">
-                    <label for="resume-upload" class="cursor-pointer">
-                        <div class="text-6xl mb-4">📄</div>
-                        <h3 class="text-xl font-bold mb-2">Drag and drop your resume here</h3>
-                        <p class="text-gray-500 mb-4">or click to browse files</p>
-                        <p class="text-sm text-gray-400">Supported formats: PDF, DOC, DOCX (Max 5MB)</p>
-                    </label>
-                </div>
-            </div>
-
-            <!-- Resume Preview -->
-            <div class="bg-yellow-50 rounded-lg shadow-lg p-8">
-                <h2 class="text-xl font-bold mb-6">Resume Preview</h2>
-                
-                <!-- Progress Bar -->
-                <div class="mb-8">
-                    <div class="flex justify-between mb-2">
-                        <span class="text-sm font-semibold">Anonymization Progress</span>
-                        <span class="text-sm text-secondary">75%</span>
-                    </div>
-                    <div class="bg-gray-200 rounded-full h-2">
-                        <div class="bg-secondary rounded-full h-2 w-3/4 progress-bar"></div>
-                    </div>
-                </div>
-
-                <!-- Preview Sections -->
-                <div class="space-y-6">
-                    <div class="border rounded-lg p-4">
-                        <h3 class="font-bold mb-2">Personal Information</h3>
-                        <div class="space-y-2">
-                            <div class="flex items-center">
-                                <span class="w-24 text-gray-500">Name:</span>
-                                <span class="bg-gray-100 px-2 py-1 rounded">*****</span>
-                            </div>
-                            <div class="flex items-center">
-                                <span class="w-24 text-gray-500">Email:</span>
-                                <span class="bg-gray-100 px-2 py-1 rounded">*****@*****.com</span>
-                            </div>
-                            <div class="flex items-center">
-                                <span class="w-24 text-gray-500">Phone:</span>
-                                <span class="bg-gray-100 px-2 py-1 rounded">(***)***-****</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="border rounded-lg p-4">
-                        <h3 class="font-bold mb-2">Skills</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-gray-100 px-3 py-1 rounded">JavaScript</span>
-                            <span class="bg-gray-100 px-3 py-1 rounded">React</span>
-                            <span class="bg-gray-100 px-3 py-1 rounded">Node.js</span>
-                            <span class="bg-gray-100 px-3 py-1 rounded">Python</span>
-                            <span class="bg-gray-100 px-3 py-1 rounded">SQL</span>
-                        </div>
-                    </div>
-
-                    <div class="border rounded-lg p-4">
-                        <h3 class="font-bold mb-2">Experience</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <div class="font-semibold">Senior Software Engineer</div>
-                                <div class="text-gray-500">[Company Name Hidden] • 2020 - Present</div>
-                                <ul class="list-disc list-inside text-gray-600 mt-2">
-                                    <li>Led development of microservices architecture</li>
-                                    <li>Improved system performance by 40%</li>
-                                    <li>Mentored junior developers</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="flex justify-end gap-4 mt-8">
-                    <button class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
-                        Edit
-                    </button>
-                    <button class="px-6 py-2 bg-secondary text-white rounded-lg hover:bg-opacity-90">
-                        Save & Continue
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-    <script>
-        // Drag and drop functionality
-        const dropZone = document.querySelector('.upload-zone');
-        const fileInput = document.querySelector('#resume-upload');
-
+      if (dropZone && fileInput) {
         ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-            dropZone.addEventListener(eventName, preventDefaults, false);
+          dropZone.addEventListener(eventName, preventDefaults, false);
         });
 
         function preventDefaults(e) {
-            e.preventDefault();
-            e.stopPropagation();
+          e.preventDefault();
+          e.stopPropagation();
         }
 
         ['dragenter', 'dragover'].forEach(eventName => {
-            dropZone.addEventListener(eventName, highlight, false);
+          dropZone.addEventListener(eventName, highlight, false);
         });
 
         ['dragleave', 'drop'].forEach(eventName => {
-            dropZone.addEventListener(eventName, unhighlight, false);
+          dropZone.addEventListener(eventName, unhighlight, false);
         });
 
         function highlight(e) {
-            dropZone.classList.add('border-secondary', 'bg-opacity-10');
+          dropZone.classList.add('border-secondary', 'bg-secondary/10');
         }
 
         function unhighlight(e) {
-            dropZone.classList.remove('border-secondary', 'bg-opacity-10');
+          dropZone.classList.remove('border-secondary', 'bg-secondary/10');
         }
 
         dropZone.addEventListener('drop', handleDrop, false);
 
         function handleDrop(e) {
-            const dt = e.dataTransfer;
-            const files = dt.files;
-            handleFiles(files);
+          const dt = e.dataTransfer;
+          const files = dt.files;
+          handleFiles(files);
         }
 
         function handleFiles(files) {
-            if (files[0]) {
-                // Handle file upload logic here
-                console.log('File uploaded:', files[0].name);
-            }
+          if (files[0]) {
+            // Show loading animation
+            dropZone.innerHTML = '<div class="loading-spinner mx-auto"></div><p class="mt-4">Processing your resume...</p>';
+            
+            // Simulate file processing
+            setTimeout(() => {
+              // Reset the upload zone
+              dropZone.innerHTML = `
+                <input type="file" id="resume-upload" class="hidden" accept=".pdf,.doc,.docx">
+                <label for="resume-upload" class="cursor-pointer">
+                  <div class="text-6xl mb-4">📄</div>
+                  <h3 class="text-xl font-bold mb-2">Resume uploaded successfully!</h3>
+                  <p class="text-gray-500 mb-4">Click to upload a different file</p>
+                  <p class="text-sm text-gray-400">Supported formats: PDF, DOC, DOCX (Max 5MB)</p>
+                </label>
+              `;
+              
+              // Restart the progress animation
+              const progressBar = document.querySelector('.animate-progress');
+              if (progressBar) {
+                progressBar.style.animation = 'none';
+                progressBar.offsetHeight; // Trigger reflow
+                progressBar.style.animation = null;
+              }
+              
+              // Update file input reference
+              document.querySelector('#resume-upload').addEventListener('change', function(e) {
+                if (this.files[0]) {
+                  handleFiles(this.files);
+                }
+              });
+
+              // Show success toast
+              showToast('Success', 'Resume uploaded successfully!', 'success');
+            }, 2000);
+          }
         }
-    </script>
-
-
-
-
-
-    <footer class="border-t border-gray-200 pt-8 text-white">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-        <div>
-          <h4 class="font-bold mb-4 text-black">About</h4>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-white hover:text-secondary">Our Story</a></li>
-            <li><a href="#" class="text-white hover:text-secondary">Team</a></li>
-            <li><a href="#" class="text-white hover:text-secondary">Careers</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-bold mb-4 text-black">Resources</h4>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-white hover:text-secondary">Blog</a></li>
-            <li><a href="#" class="text-white hover:text-secondary">Guide</a></li>
-            <li><a href="#" class="text-white hover:text-secondary">FAQ</a></li>
-          </ul>
-        </div>
         
-        <div>
-          <h4 class="font-bold mb-4 text-black">Legal</h4>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-white hover:text-secondary">Privacy</a></li>
-            <li><a href="#" class="text-white hover:text-secondary">Terms</a></li>
-            <li><a href="#" class="text-white hover:text-secondary">Security</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-bold mb-4 text-black">Connect</h4>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-white hover:text-secondary">Twitter</a></li>
-            <li><a href="#" class="text-white hover:text-secondary">LinkedIn</a></li>
-            <li><a href="#" class="text-white hover:text-secondary">GitHub</a></li>
-          </ul>
-        </div>
-      </div>
-    
-      <div class="text-center text-white pb-8">
-        © 2024 FairHire. All rights reserved.
-      </div>
-    </footer>
-  </div>
+        // Handle file input change
+        fileInput.addEventListener('change', function(e) {
+          if (this.files[0]) {
+            handleFiles(this.files);
+          }
+        });
+      }
+      
+      // Settings functionality
+      const saveButtons = document.querySelectorAll('button.bg-secondary');
+      saveButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Show success message
+          showToast('Success', 'Changes saved successfully!', 'success');
+        });
+      });
+
+      // Modal functionality
+      const signupModal = document.getElementById('signup-modal');
+      const loginModal = document.getElementById('login-modal');
+      const closeSignup = document.getElementById('close-signup');
+      const closeLogin = document.getElementById('close-login');
+      const signInButton = document.getElementById('sign-in-button');
+      const getStartedButton = document.getElementById('get-started-button');
+      const ctaButton = document.getElementById('cta-button');
+      const loginLink = document.getElementById('login-link');
+      const signupLink = document.getElementById('signup-link');
+
+      // Open modals
+      signInButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        loginModal.classList.add('active');
+      });
+
+      getStartedButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        signupModal.classList.add('active');
+      });
+
+      ctaButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        signupModal.classList.add('active');
+      });
+
+      // Switch between modals
+      loginLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        signupModal.classList.remove('active');
+        loginModal.classList.add('active');
+      });
+
+      signupLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        loginModal.classList.remove('active');
+        signupModal.classList.add('active');
+      });
+
+      // Close modals
+      closeSignup.addEventListener('click', function() {
+        signupModal.classList.remove('active');
+      });
+
+      closeLogin.addEventListener('click', function() {
+        loginModal.classList.remove('active');
+      });
+
+      // Close modals when clicking outside
+      window.addEventListener('click', function(e) {
+        if (e.target === signupModal) {
+          signupModal.classList.remove('active');
+        }
+        if (e.target === loginModal) {
+          loginModal.classList.remove('active');
+        }
+      });
+
+      // Form validation
+      const signupForm = document.getElementById('signup-form');
+      const loginForm = document.getElementById('login-form');
+
+      signupForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let isValid = true;
+
+        // Name validation
+        const name = document.getElementById('signup-name');
+        const nameError = document.getElementById('name-error');
+        if (name.value.trim() === '') {
+          nameError.textContent = 'Name is required';
+          name.classList.add('error');
+          isValid = false;
+        } else {
+          nameError.textContent = '';
+          name.classList.remove('error');
+        }
+
+        // Email validation
+        const email = document.getElementById('signup-email');
+        const emailError = document.getElementById('email-error');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email.value)) {
+          emailError.textContent = 'Please enter a valid email address';
+          email.classList.add('error');
+          isValid = false;
+        } else {
+          emailError.textContent = '';
+          email.classList.remove('error');
+        }
+
+        // Password validation
+        const password = document.getElementById('signup-password');
+        const passwordError = document.getElementById('password-error');
+        if (password.value.length < 8) {
+          passwordError.textContent = 'Password must be at least 8 characters';
+          password.classList.add('error');
+          isValid = false;
+        } else {
+          passwordError.textContent = '';
+          password.classList.remove('error');
+        }
+
+        // Confirm password validation
+        const confirmPassword = document.getElementById('signup-confirm-password');
+        const confirmPasswordError = document.getElementById('confirm-password-error');
+        if (password.value !== confirmPassword.value) {
+          confirmPasswordError.textContent = 'Passwords do not match';
+          confirmPassword.classList.add('error');
+          isValid = false;
+        } else {
+          confirmPasswordError.textContent = '';
+          confirmPassword.classList.remove('error');
+        }
+
+        // Terms validation
+        const terms = document.getElementById('signup-terms');
+        const termsError = document.getElementById('terms-error');
+        if (!terms.checked) {
+          termsError.textContent = 'You must agree to the terms';
+          isValid = false;
+        } else {
+          termsError.textContent = '';
+        }
+
+        if (isValid) {
+          // Simulate account creation
+          signupModal.classList.remove('active');
+          showToast('Success', 'Account created successfully!', 'success');
+          
+          // Update UI to show logged in state
+          updateUIForLoggedInUser(name.value);
+        }
+      });
+
+      loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let isValid = true;
+
+        // Email validation
+        const email = document.getElementById('login-email');
+        const emailError = document.getElementById('login-email-error');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email.value)) {
+          emailError.textContent = 'Please enter a valid email address';
+          email.classList.add('error');
+          isValid = false;
+        } else {
+          emailError.textContent = '';
+          email.classList.remove('error');
+        }
+
+        // Password validation
+        const password = document.getElementById('login-password');
+        const passwordError = document.getElementById('login-password-error');
+        if (password.value.length < 1) {
+          passwordError.textContent = 'Please enter your password';
+          password.classList.add('error');
+          isValid = false;
+        } else {
+          passwordError.textContent = '';
+          password.classList.remove('error');
+        }
+
+        if (isValid) {
+          // Simulate login
+          loginModal.classList.remove('active');
+          showToast('Success', 'Logged in successfully!', 'success');
+          
+          // Update UI to show logged in state
+          updateUIForLoggedInUser('User');
+        }
+      });
+
+      // Function to update UI for logged in user
+      function updateUIForLoggedInUser(name) {
+        signInButton.textContent = name;
+        signInButton.classList.remove('bg-secondary');
+        signInButton.classList.add('bg-primary');
+        
+        // Change click behavior to show user menu instead of login modal
+        signInButton.removeEventListener('click', function() {});
+        signInButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          const userMenu = document.getElementById('user-menu');
+          userMenu.classList.toggle('active');
+        });
+      }
+
+      // User dropdown menu functionality
+      const userMenuButton = document.getElementById('user-menu-button');
+      const recruiterMenuButton = document.getElementById('recruiter-menu-button');
+      const resumeMenuButton = document.getElementById('resume-menu-button');
+      
+      if (userMenuButton) {
+        userMenuButton.addEventListener('click', function() {
+          document.getElementById('user-menu').classList.toggle('active');
+        });
+      }
+      
+      if (recruiterMenuButton) {
+        recruiterMenuButton.addEventListener('click', function() {
+          document.getElementById('recruiter-menu').classList.toggle('active');
+        });
+      }
+      
+      if (resumeMenuButton) {
+        resumeMenuButton.addEventListener('click', function() {
+          document.getElementById('resume-menu').classList.toggle('active');
+        });
+      }
+
+      // Close dropdown menus when clicking outside
+      document.addEventListener('click', function(e) {
+        if (userMenuButton && !userMenuButton.contains(e.target)) {
+          document.getElementById('user-menu').classList.remove('active');
+        }
+        if (recruiterMenuButton && !recruiterMenuButton.contains(e.target)) {
+          document.getElementById('recruiter-menu').classList.remove('active');
+        }
+        if (resumeMenuButton && !resumeMenuButton.contains(e.target)) {
+          document.getElementById('resume-menu').classList.remove('active');
+        }
+      });
+
+      // Accessibility panel functionality
+      const accessibilityToggle = document.querySelector('.accessibility-toggle');
+      const accessibilityPanel = document.querySelector('.accessibility-panel');
+      const highContrastToggle = document.getElementById('high-contrast-toggle');
+      const largeTextToggle = document.getElementById('large-text-toggle');
+      const textSpacingSlider = document.getElementById('text-spacing-slider');
+      const screenReaderButton = document.getElementById('screen-reader-button');
+
+      accessibilityToggle.addEventListener('click', function() {
+        accessibilityPanel.classList.toggle('active');
+      });
+
+      highContrastToggle.addEventListener('change', function() {
+        document.body.classList.toggle('high-contrast', this.checked);
+        localStorage.setItem('high-contrast', this.checked);
+      });
+
+      largeTextToggle.addEventListener('change', function() {
+        document.body.classList.toggle('large-text', this.checked);
+        localStorage.setItem('large-text', this.checked);
+      });
+
+      textSpacingSlider.addEventListener('input', function() {
+        document.body.style.letterSpacing = (this.value - 1) * 0.1 + 'em';
+        document.body.style.lineHeight = 1.4 + (this.value - 1) * 0.2;
+        localStorage.setItem('text-spacing', this.value);
+      });
+
+      screenReaderButton.addEventListener('click', function() {
+        showToast('Screen Reader', 'Use Tab to navigate, Enter to select, and Escape to exit.', 'info');
+      });
+
+      // Load accessibility settings from localStorage
+      if (localStorage.getItem('high-contrast') === 'true') {
+        highContrastToggle.checked = true;
+        document.body.classList.add('high-contrast');
+      }
+
+      if (localStorage.getItem('large-text') === 'true') {
+        largeTextToggle.checked = true;
+        document.body.classList.add('large-text');
+      }
+
+      if (localStorage.getItem('text-spacing')) {
+        const spacing = localStorage.getItem('text-spacing');
+        textSpacingSlider.value = spacing;
+        document.body.style.letterSpacing = (spacing - 1) * 0.1 + 'em';
+        document.body.style.lineHeight = 1.4 + (spacing - 1) * 0.2;
+      }
+
+      // Style the toggle switches
+      const toggles = document.querySelectorAll('input[type="checkbox"].sr-only');
+      toggles.forEach(toggle => {
+        toggle.addEventListener('change', function() {
+          const dot = this.nextElementSibling.querySelector('.dot');
+          if (this.checked) {
+            dot.style.transform = 'translateX(100%)';
+            this.nextElementSibling.style.backgroundColor = '#26A69A';
+          } else {
+            dot.style.transform = 'translateX(0)';
+            this.nextElementSibling.style.backgroundColor = '#e5e7eb';
+          }
+        });
+
+        // Initialize toggle state
+        if (toggle.checked) {
+          const dot = toggle.nextElementSibling.querySelector('.dot');
+          dot.style.transform = 'translateX(100%)';
+          toggle.nextElementSibling.style.backgroundColor = '#26A69A';
+        }
+      });
+
+      // Toast notification functionality
+      function showToast(title, message, type = 'info') {
+        const toastContainer = document.getElementById('toast-container');
+        
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        
+        let icon = '';
+        if (type === 'success') {
+          icon = '✓';
+        } else if (type === 'error') {
+          icon = '✕';
+        } else {
+          icon = 'ℹ';
+        }
+        
+        toast.innerHTML = `
+          <div class="toast-icon">${icon}</div>
+          <div class="toast-content">
+            <div class="toast-title">${title}</div>
+            <div class="toast-message">${message}</div>
+          </div>
+          <div class="toast-close">×</div>
+        `;
+        
+        toastContainer.appendChild(toast);
+        
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          setTimeout(() => {
+            toast.remove();
+          }, 300);
+        }, 5000);
+        
+        // Close on click
+        toast.querySelector('.toast-close').addEventListener('click', function() {
+          toast.style.opacity = '0';
+          setTimeout(() => {
+            toast.remove();
+          }, 300);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
